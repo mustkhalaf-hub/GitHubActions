@@ -12,8 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Run one-line script
         run: echo "Hello World"
+
+      - name: Run multi-line script
+        run: |
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
 
   build-api:
     runs-on: windows-latest
@@ -27,11 +33,7 @@ jobs:
       - run: echo "hello windows"
 
   packaging:
-    needs: [build-app, build-api]
+    needs: [build-app, build-db]
     runs-on: macos-latest
     steps:
       - run: echo "hello macos"
-
-  
-
-  
