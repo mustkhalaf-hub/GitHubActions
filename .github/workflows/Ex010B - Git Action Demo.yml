@@ -27,6 +27,7 @@ jobs:
       - run: echo "building API"
 
   build-db:
+    #needs betyder att den appen som är build-db kan inte köra fören build-app har kört klart. 
     needs: build-app
     runs-on: windows-latest
     steps:
